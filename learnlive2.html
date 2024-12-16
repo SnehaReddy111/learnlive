@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLive - Live Quiz</title>
+    <link rel="stylesheet" href="learnlive2.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">LearnLive Quiz</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#quiz">Quiz:</a>
+                        <select id="Question" name="Quiz">
+                            <option value="Sports">Sports</option>
+                            <option value="History">History</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Science">Science</option>
+                        </select>
+                    </li>
+                    <li><a href="#leaderboard">Leaderboard</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="quiz" class="quiz-section">
+            <div class="container">
+                <h2>Interactive Quiz</h2>
+                <p>Answer the questions below:</p>
+                <div class="question">
+                    <h3>Question 1:Who is associated with Badminton?</h3>
+                    <form>
+                        <label><input type="radio" name="q3" value="Sania Mirza">Sania Mirza</label><br>
+                        <label><input type="radio" name="q3" value=" P.T.Usha">P.T.Usha</label><br>
+                        <label><input type="radio" name="q3" value="Shahini vilson">Shahini vilson</label><br>
+                        <label><input type="radio" name="q3" value="Saina Nehwal">Saina Nehwal</label><br>
+                        <button type="button" class="submit-btn3">Submit</button>
+                    </form>
+                </div>
+            
+                <div class="question">
+                    <h3>Question 2: V.Anand belongs to which sports?</h3>
+                    <form>
+                        <label><input type="radio" name="q4" value="Chess">Chess</label><br>
+                        <label><input type="radio" name="q4" value="Tennis">Tennis</label><br>
+                        <label><input type="radio" name="q4" value="Golf">Golf</label><br>
+                        <label><input type="radio" name="q4" value="Hockey">Hockey</label><br>
+                        <button type="button" class="submit-btn4">Submit</button>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <h3>Question 3: Where is Greenpark Stadium?</h3>
+                    <form>
+                        <label><input type="radio" name="q5" value="Kolkata"> Kolkata</label><br>
+                        <label><input type="radio" name="q5" value="Mumbai">  Mumbai</label><br>
+                        <label><input type="radio" name="q5" value="Kanpur">  Kanpur</label><br>
+                        <label><input type="radio" name="q5" value="Lucknow"> Lucknow</label><br>
+                        <button type="button" class="submit-btn5">Submit</button>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <h3>Question 4: Who was the first India ti win an individual medal in Olympics?</h3>
+                    <form>
+                        <label><input type="radio" name="q6" value="Milkha Sing">Milkha Sing</label><br>
+                        <label><input type="radio" name="q6" value="Karnma Malleshwari">Karnma Malleshwari</label><br>
+                        <label><input type="radio" name="q6" value="P.T Usha">P.T Usha</label><br>
+                        <label><input type="radio" name="q6" value="K.D Jadhav">K.D Jadhav</label><br>
+                        <button type="button" class="submit-btn6">Submit</button>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <h3>Question 5: In which year did India first particitape in the Olympics games?</h3>
+                    <form>
+                        <label><input type="radio" name="q7" value="1900">1900</label><br>
+                        <label><input type="radio" name="q7" value="1925">1925</label><br>
+                        <label><input type="radio" name="q7" value="1923">1923</label><br>
+                        <label><input type="radio" name="q7" value="1927">1927</label><br>
+                        <button type="button" class="submit-btn7">Submit</button>
+                    </form>
+                </div>
+                <div class="result">
+                    <p id="result-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="leaderboard" class="leaderboard-section">
+            <div class="container">
+                <h2>Leaderboard</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Sneha</td>
+                            <td>95</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Myna</td>
+                            <td>90</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Divya
+                            </td>
+                            <td>85</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Email: support@learnlive.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 LearnLive. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.submit-btn3').addEventListener('click', () => {
+            const selectedAnswer = document.querySelector('input[name="q3"]:checked');
+            const resultText = document.getElementById('result-text');
+            if (selectedAnswer && selectedAnswer.value === 'Saina Nehwal') {
+                resultText.textContent = 'Correct! Saina Nehwal is associated with Badminton.';
+                resultText.style.color = 'green';
+            } else {
+                resultText.textContent = 'Incorrect. The correct answer is Saina Nehwal.';
+                resultText.style.color = 'red';
+            }
+        });
+
+        document.querySelector('.submit-btn4').addEventListener('click', () => {
+            const selectedAnswer = document.querySelector('input[name="q4"]:checked');
+            const resultText = document.getElementById('result-text');
+            if (selectedAnswer && selectedAnswer.value === 'V.Anand') {
+                resultText.textContent = 'Correct! V.Anand belongs to Chess.';
+                resultText.style.color = 'green';
+            } else {
+                resultText.textContent = 'Incorrect. The correct answer is Chess.';
+                resultText.style.color = 'red';
+            }
+        });
+
+        document.querySelector('.submit-btn5').addEventListener('click', () => {
+            const selectedAnswer = document.querySelector('input[name="q5"]:checked');
+            const resultText = document.getElementById('result-text');
+            if (selectedAnswer && selectedAnswer.value === 'Kanpur') {
+                resultText.textContent = 'Correct! Kanpur.';
+                resultText.style.color = 'green';
+            } else {
+                resultText.textContent = 'Incorrect. The correct answer is Kanpur.';
+                resultText.style.color = 'red';
+            }
+        });
+
+        document.querySelector('.submit-btn6').addEventListener('click', () => {
+            const selectedAnswer = document.querySelector('input[name="q6"]:checked');
+            const resultText = document.getElementById('result-text');
+            if (selectedAnswer && selectedAnswer.value === 'K.D Jadhav') {
+                resultText.textContent = 'Correct! K.D Jadhav.';
+                resultText.style.color = 'green';
+            } else {
+                resultText.textContent = 'Incorrect. The correct answer is K.D Jadhav.';
+                resultText.style.color = 'red';
+            }
+        });
+
+        document.querySelector('.submit-btn7').addEventListener('click', () => {
+            const selectedAnswer = document.querySelector('input[name="q7"]:checked');
+            const resultText = document.getElementById('result-text');
+            if (selectedAnswer && selectedAnswer.value === '1900') {
+                resultText.textContent = 'Correct! 1900.';
+                resultText.style.color = 'green';
+            } else {
+                resultText.textContent = 'Incorrect. The correct answer is 1900.';
+                resultText.style.color = 'red';
+            }
+        });
+    </script>
+
+</body>
+</html>
